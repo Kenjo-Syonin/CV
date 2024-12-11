@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Kenjo Syonin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(25, 0, 30);
+        }
+        
+        header {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 20px;
+            background-image: linear-gradient(to top right, cyan, rgba(37, 0, 45), cyan);
+            color: white;
+            border-bottom:solid 2px cyan;
+        }
+
+        .headh{
+            display:flex;
+            background-color: black;
+            width: fit-content;
+            padding: 0 25px 0 25px;
+            border-radius: 50px;
+            border: solid 2px cyan;
+        }
+
+        .headp{
+            display:flex;
+            background-color: black;
+            width: fit-content;
+            padding: 10px;
+            border-radius: 50px;
+            border: solid 2px cyan;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px 0;
+            border: solid 2px cyan;
+        }
+        
+        
+        h2, p, li {
+            color: #ffffff;
+        }
+        
+        .clickable, a {
+            color: rgba(151, 83, 165);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        a{
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgb(0, 0, 0);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            max-width: 600px;
+            margin: 20px auto 20px 20px;
+            padding: 10px;
+            background-color: black;
+            border: solid cyan 3px;
+            border-left: double cyan 10px;
+            border-radius: 25px 100px 100px 25px;
+            box-shadow: 8px 8px rgba(151, 83, 165);
+        }
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="headh">
+            <h1>Kenjo Syonin</h1>
+        </div>
+        <img src="kenjo(crop).jpg" alt="Profile Picture" class="profile-pic">
+        <div class="headp"><p>Embedded Developer </p></div>
+    </header>
+
+        <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello I’m Kenjo, a student with an interest in IoT, I’m still learning Arduino and it’s programing language. I have passion to making an IoT tool for my hobby, and to provide convenience in my everyday life.</p>        
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="https://kenjo-syonin-suku-bunga.vercel.app/" >Suku Bunga <img src="favicon-16x16.png" alt="favicon"></a><br>a project from the math subject</li>
+                <li><a href="https://wokwi.com/projects/415157796460884993" >Suhu & Kelembapan <img src="favicon-16x16.png" alt="favicon"></a><br> a Temperature and Humidity monitoring device on Wokwi.com</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Phone: <span id="phone" class="clickable">+62-851-8321-7290</span> OR <a href="https://wa.me/+6285183217290" title="whatsapp icons">Whatsapp <img src="watsap-16x16.png" alt="favicon"><img src="favicon-16x16.png" alt="favicon"></a></p>
+            <p>Email: <span id="email" class="clickable">kenjosyonin@gmail.com</span></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/kenjo-syonin-835778321/" target="_blank">LinkedIn Profile <img src="favicon-16x16.png" alt="favicon"></a></p>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const phone = document.getElementById('phone');
+            const email = document.getElementById('email');
+        
+            phone.addEventListener('click', function() {
+                copyToClipboard(phone.textContent);
+                alert('Phone number copied to clipboard: ' + phone.textContent);
+            });
+        
+            email.addEventListener('click', function() {
+                copyToClipboard(email.textContent);
+                alert('Email copied to clipboard: ' + email.textContent);
+            });
+        
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(function() {
+                    console.log('Copied to clipboard: ' + text);
+                }, function(err) {
+                    console.error('Could not copy text: ', err);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
